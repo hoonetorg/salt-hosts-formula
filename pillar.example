@@ -1,0 +1,6 @@
+hosts:
+  lookup:
+    datasources:
+      nodedata:
+        ipsource: "netdata:ipaddresses:ipaddr_internal"
+        cnamessource: "dnsdata:cnames"
