@@ -17,7 +17,7 @@
 hosts__entry_{{host}}:
   file.replace:
     - name: /etc/hosts
-    - pattern: ^\s*{{hostip}}\s+.*$
+    - pattern: ^\s*{{hostip|replace('.','\.')}}\s+.*$
     - repl: "{{hostip}} {{host}} {{host.split('.')[0]}}  {{hostcnames|join(' ')}}"
     - count: 1
     - append_if_not_found: True
