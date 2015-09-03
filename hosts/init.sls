@@ -22,6 +22,12 @@ hosts__entry_{{host}}:
     - count: 1
     - append_if_not_found: True
 
+#FIXME: implement host removal
+#inspired by conversation with mpanetta on freenode #salt irc channel http://irclog.perlgeek.de/salt/2015-09-03
+# cat /etc/hosts |sed -r "/\b{{host|replace('.','\.')}}\b/d"
+# pattern: ^\s*[0-9]{1,3}\.){3}[0-9]{1,3}.*\b{{host|replace('.','\.')}}\b
+
+
 {% endfor -%}
 {% endfor -%}
 
